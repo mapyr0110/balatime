@@ -27,7 +27,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF9F6] text-[#1E293B] antialiased selection:bg-[#FF5C35]/20 selection:text-[#FF5C35]">
+    <div className="min-h-screen bg-[var(--color-bg)] text-[var(--color-ink)] antialiased selection:bg-[var(--color-primary)]/20 selection:text-[var(--color-primary)]">
       {/* Sticky Top Header Navigation */}
       <Header />
 
@@ -57,4 +57,3 @@ export default function App() {
     </div>
   );
 }
-

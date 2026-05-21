@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { Sparkles, Heart, Award, Shield, CheckCircle } from "lucide-react";
+import { Heart, Award, Shield, CheckCircle } from "lucide-react";
 import { TEACHERS } from "../data/websiteData";
 
 export default function About() {
@@ -34,8 +34,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
           
           <div className="lg:col-span-6 text-left">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] mb-6">
-              <Sparkles className="w-3.5 h-3.5 fill-current" />
+            <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] mb-6">
               <span className="font-display text-[11px] font-bold tracking-wider uppercase">О нашей школе</span>
             </div>
             
@@ -126,7 +125,7 @@ export default function About() {
                     referrerPolicy="no-referrer"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                   />
-                  <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm shadow-sm py-1 px-3 rounded-full border border-[rgba(0,0,0,0.04)]">
+                  <div className="absolute top-4 left-4 bg-white shadow-sm py-1 px-3 rounded-full border border-[rgba(0,0,0,0.04)]">
                     <span className="font-display text-[11px] font-bold text-[var(--color-primary)]">{teacher.experience}</span>
                   </div>
                 </div>
@@ -142,7 +141,7 @@ export default function About() {
                   
                   <div className="border-t border-[rgba(0,0,0,0.04)] pt-4 mt-auto">
                     <p className="font-sans text-[11px] text-[var(--color-ink-light)] italic mb-3">
-                      🎓 {teacher.education}
+                      {teacher.education}
                     </p>
                     <p className="font-sans text-xs sm:text-sm text-[var(--color-ink-light)] leading-relaxed">
                       {teacher.bio}

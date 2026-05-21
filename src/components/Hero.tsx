@@ -4,164 +4,130 @@
  */
 
 import { motion } from "motion/react";
-import { ArrowDown, Sparkles, Star, ShieldCheck } from "lucide-react";
+import { ArrowRight, CheckCircle2, ShieldCheck, Star, UsersRound } from "lucide-react";
 import { HERO_ILLUSTRATION } from "../data/websiteData";
 
 export default function Hero() {
   const handleScrollToSection = (id: string) => {
     const target = document.querySelector(id);
-    if (target) {
-      const headerOffset = 90;
-      const elementPosition = target.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    if (!target) return;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
+    const headerOffset = 96;
+    const elementPosition = target.getBoundingClientRect().top;
+    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+    window.scrollTo({ top: offsetPosition, behavior: "smooth" });
   };
 
+  const trustItems = [
+    { icon: <Star className="h-5 w-5" />, value: "4.9 / 5", label: "оценка родителей" },
+    { icon: <UsersRound className="h-5 w-5" />, value: "5-12 лет", label: "возраст детей" },
+    { icon: <ShieldCheck className="h-5 w-5" />, value: "до 8 детей", label: "в группе" },
+  ];
+
+  const learningSteps = [
+    { title: "Диагностика", progress: "100%", color: "bg-[var(--color-accent-blue)]" },
+    { title: "План обучения", progress: "76%", color: "bg-[var(--color-accent-green)]" },
+    { title: "Поддержка семьи", progress: "88%", color: "bg-[var(--color-primary)]" },
+  ];
+
   return (
-    <section id="hero" className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-[var(--color-bg)]">
-      {/* Decorative whimsical circles in background */}
-      <div className="absolute top-1/4 -left-12 w-48 h-48 rounded-full bg-[var(--color-primary)]/10 opacity-60 blur-2xl pointer-events-none" />
-      <div className="absolute bottom-1/3 right-10 w-64 h-64 rounded-full bg-[var(--color-accent-blue)]/10 opacity-70 blur-3xl pointer-events-none" />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          
-          {/* Text Content */}
-          <div className="lg:col-span-7 flex flex-col text-left">
-            {/* Soft premium badge */}
-            <motion.div 
-              initial={{ opacity: 0, y: 15 }} 
-              animate={{ opacity: 1, y: 0 }} 
-              transition={{ duration: 0.5 }}
-              className="inline-flex self-start items-center gap-1.5 px-4 py-2 rounded-full bg-white text-[var(--color-ink)] border border-[rgba(0,0,0,0.05)] shadow-sm mb-6"
-            >
-              <Sparkles className="w-4 h-4 text-[var(--color-primary)] fill-[var(--color-primary)]" />
-              <span className="font-display text-[10px] sm:text-xs font-bold tracking-wider uppercase text-[var(--color-primary)]">
-                BALATIME SCHOOL • Детский Центр & Знания
-              </span>
-            </motion.div>
-
-            {/* Main Title */}
+    <section id="hero" className="bg-[var(--color-bg)] pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="section-shell">
+        <div className="grid items-center gap-12 lg:grid-cols-12">
+          <div className="lg:col-span-7">
             <motion.h1
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="font-serif text-4xl sm:text-5xl md:text-6xl text-[var(--color-ink)] font-bold leading-tight tracking-tight mb-6"
+              transition={{ duration: 0.5, delay: 0.05 }}
+              className="max-w-3xl font-sans text-4xl font-black leading-[1.05] text-[var(--color-ink)] sm:text-5xl lg:text-6xl"
             >
-              Бережное обучение, которое <span className="font-brand text-[var(--color-accent-blue)] italic select-none">влюбляет</span> детей в учебу
+              BALATIME SCHOOL для детей 5-12 лет
             </motion.h1>
 
-            {/* Subheading */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-sans text-lg text-[var(--color-ink-light)] leading-relaxed mb-8 max-w-xl"
+              transition={{ duration: 0.5, delay: 0.1 }}
+              className="mt-6 max-w-2xl text-lg font-semibold leading-8 text-[var(--color-ink-light)]"
             >
-              Современный премиальный центр развития в Алматы. Подготовка к школе, английский, домашние задания и казахский язык в атмосфере дружбы, игры и искренней поддержки.
+              Подготовка к школе, английский, казахский язык и помощь с домашними заданиями в спокойной среде, где ребёнку понятно, интересно и не страшно ошибаться.
             </motion.p>
 
-            {/* CTAs */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="flex flex-wrap gap-4"
+              transition={{ duration: 0.5, delay: 0.15 }}
+              className="mt-8 flex flex-col gap-3 sm:flex-row"
             >
               <button
                 onClick={() => handleScrollToSection("#form-order")}
-                className="px-8 py-4 bg-[var(--color-primary)] hover:bg-[#D97924] text-white font-display text-sm font-bold rounded-full transition-all duration-300 hover:scale-[1.02] shadow-lg shadow-[rgba(242,143,59,0.3)] uppercase tracking-wider"
+                className="inline-flex min-h-14 items-center justify-center gap-2 rounded-full bg-[var(--color-primary)] px-7 py-4 font-display text-base font-bold text-white shadow-[0_12px_28px_rgba(244,147,66,0.22)] transition-transform hover:-translate-y-0.5"
               >
-                Записаться на урок
+                Записаться на пробный урок
+                <ArrowRight className="h-5 w-5" />
               </button>
-              
+
               <button
                 onClick={() => handleScrollToSection("#programs")}
-                className="px-8 py-4 bg-white hover:bg-[var(--color-bg)] border border-[rgba(0,0,0,0.08)] text-[var(--color-ink)] font-display text-sm font-bold rounded-full transition-all duration-300 hover:scale-[1.02] flex items-center gap-2 uppercase tracking-wider"
+                className="inline-flex min-h-14 items-center justify-center rounded-full border border-[#D8E5F1] bg-white px-7 py-4 font-display text-base font-bold text-[var(--color-ink)] transition-colors hover:bg-[#F1F6FB]"
               >
-                <span>Подробнее</span>
-                <ArrowDown className="w-4 h-4 text-[var(--color-ink-light)] animate-bounce" />
+                Смотреть программы
               </button>
             </motion.div>
 
-            {/* Soft Credibility Badges */}
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="grid grid-cols-2 md:grid-cols-3 gap-4 border-t border-[rgba(0,0,0,0.05)] mt-12 pt-8"
+              transition={{ duration: 0.5, delay: 0.22 }}
+              className="mt-10 grid gap-3 sm:grid-cols-3"
             >
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)]">
-                  <Star className="w-5 h-5 fill-current" />
+              {trustItems.map((item) => (
+                <div key={item.label} className="rounded-[24px] border border-[#D8E5F1] bg-white p-4">
+                  <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-[#EAF6FF] text-[var(--color-accent-blue)]">
+                    {item.icon}
+                  </div>
+                  <div className="font-display text-lg font-black text-[var(--color-ink)]">{item.value}</div>
+                  <div className="mt-1 text-sm font-semibold text-[var(--color-ink-light)]">{item.label}</div>
                 </div>
-                <div className="flex flex-col">
-                  <span className="font-display text-sm font-bold text-[var(--color-ink)]">4.9 / 5</span>
-                  <span className="font-sans text-[11px] text-[var(--color-ink-light)]">Рейтинг от родителей</span>
-                </div>
-              </div>
-
-              <div className="flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-[var(--color-accent-blue)]/10 flex items-center justify-center text-[var(--color-accent-blue)]">
-                  <ShieldCheck className="w-5 h-5" />
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-display text-sm font-bold text-[var(--color-ink)]">до 8 детей</span>
-                  <span className="font-sans text-[11px] text-[var(--color-ink-light)]">В каждой группе</span>
-                </div>
-              </div>
-
-              <div className="hidden md:flex items-center gap-2.5">
-                <div className="w-9 h-9 rounded-xl bg-[var(--color-accent-green)]/10 flex items-center justify-center text-[var(--color-accent-green)]">
-                  <span className="font-brand font-bold text-xs text-[var(--color-accent-green)]">100%</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="font-display text-sm font-bold text-[var(--color-ink)]">Гарантия</span>
-                  <span className="font-sans text-[11px] text-[var(--color-ink-light)]">результата и комфорта</span>
-                </div>
-              </div>
+              ))}
             </motion.div>
           </div>
 
-          {/* Magical Illustration Block */}
-          <div className="lg:col-span-5 relative">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.7 }}
-              className="relative aspect-4/3 lg:aspect-square w-full rounded-3xl overflow-hidden bg-white border border-[rgba(0,0,0,0.04)] smooth-shadow-deep p-6 flex items-center justify-center"
-            >
-              {/* Top and side playful circles */}
-              <div className="absolute top-4 right-4 bg-white border border-[rgba(0,0,0,0.05)] text-[var(--color-ink)] text-[10px] uppercase tracking-wide font-bold px-3 py-1 rounded-full pointer-events-none">
-                Almaty 🌸
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.55, delay: 0.12 }}
+            className="lg:col-span-5"
+          >
+            <div className="rounded-[32px] border border-[#D8E5F1] bg-white p-4 smooth-shadow-deep">
+              <div className="rounded-[24px] bg-[#F4F8FC] p-5">
+                <img
+                  src={HERO_ILLUSTRATION}
+                  alt="Дети учатся и работают вместе в BALATIME SCHOOL"
+                  referrerPolicy="no-referrer"
+                  className="aspect-[4/3] w-full object-contain"
+                />
               </div>
-              <img
-                src={HERO_ILLUSTRATION}
-                alt="BALATIME SCHOOL Children Studying Whimsical Illustration"
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-contain select-none"
-              />
-            </motion.div>
 
-            {/* Little floating element */}
-            <motion.div 
-              animate={{ y: [0, -10, 0] }}
-              transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
-              className="absolute -bottom-6 -left-6 bg-white p-4 rounded-2xl border border-[rgba(0,0,0,0.05)] shadow-lg flex items-center gap-3 max-w-[200px]"
-            >
-              <span className="text-2xl">🧸</span>
-              <div className="flex flex-col text-left">
-                <span className="font-display text-xs font-bold text-[var(--color-ink)]">Учимся играя</span>
-                <span className="font-sans text-[10px] text-[var(--color-ink-light)]">без скучной зубрежки</span>
+              <div className="mt-5 grid gap-3">
+                {learningSteps.map((step) => (
+                  <div key={step.title} className="rounded-2xl border border-[#E1EAF3] bg-white p-4">
+                    <div className="mb-2 flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-2 font-display text-sm font-bold text-[var(--color-ink)]">
+                        <CheckCircle2 className="h-4 w-4 text-[var(--color-accent-green)]" />
+                        {step.title}
+                      </div>
+                      <span className="text-xs font-extrabold text-[var(--color-ink-light)]">{step.progress}</span>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-full bg-[#EAF0F6]">
+                      <div className={`h-full rounded-full ${step.color}`} style={{ width: step.progress }} />
+                    </div>
+                  </div>
+                ))}
               </div>
-            </motion.div>
-          </div>
-
+            </div>
+          </motion.div>
         </div>
       </div>
     </section>

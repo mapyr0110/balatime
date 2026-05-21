@@ -1,28 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:wght@300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400..700&family=Inter:wght@400..900&family=Nunito:wght@500..900&family=Outfit:wght@500..900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", sans-serif;
+  --font-sans: "Nunito", "Inter", sans-serif;
   --font-display: "Outfit", sans-serif;
-  --font-serif: "Playfair Display", serif;
+  --font-serif: "Nunito", "Inter", sans-serif;
   --font-brand: "Fredoka", sans-serif;
 
-  --color-bg: #F3F4F6;
-  --color-ink: #2D3436;
-  --color-ink-light: #636E72;
-  --color-primary: #F28F3B;
-  --color-accent-red: #FF5E5E;
-  --color-accent-blue: #5DA9E9;
-  --color-accent-green: #7FB069;
+  --color-bg: #F6F9FC;
+  --color-surface: #FFFFFF;
+  --color-ink: #17324D;
+  --color-ink-light: #5F7084;
+  --color-primary: #F49342;
+  --color-accent-red: #F46D75;
+  --color-accent-blue: #4F9FE8;
+  --color-accent-green: #28B7A4;
+  --color-accent-yellow: #F6C85F;
+  --color-accent-purple: #AFA7F4;
 }
 
 html {
   scroll-behavior: smooth;
   background-color: var(--color-bg);
-  color: var(--color-ink); /* Deep charcoal ink */
+  color: var(--color-ink);
 }
 
-/* Custom scrollbar to look sleek and friendly */
+body {
+  background: var(--color-bg);
+}
+
+button,
+a,
+input,
+select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(79, 159, 232, 0.35);
+  outline-offset: 3px;
+}
+
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -30,18 +51,38 @@ html {
   background: var(--color-bg);
 }
 ::-webkit-scrollbar-thumb {
-  background: #E9E2D7;
+  background: #C7D5E4;
   border-radius: 9999px;
   border: 3px solid var(--color-bg);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #CBD5E1;
+  background: #9FB6CD;
 }
 
-/* Custom smooth entries and transitions */
 .smooth-shadow {
-  box-shadow: 0 4px 20px -2px rgba(45, 52, 54, 0.04);
+  box-shadow: 0 10px 24px rgba(23, 50, 77, 0.06);
 }
 .smooth-shadow-deep {
-  box-shadow: 0 10px 30px -5px rgba(45, 52, 54, 0.08), 0 4px 12px -2px rgba(45, 52, 54, 0.03);
+  box-shadow: 0 18px 45px rgba(23, 50, 77, 0.10);
+}
+
+.section-shell {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .section-shell {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .section-shell {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
 }

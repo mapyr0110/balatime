@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { Check, Gift, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Check, Clock3, Gift, GraduationCap, Languages, PencilRuler, UserRoundCheck } from "lucide-react";
 import { PROGRAMS } from "../data/websiteData";
 import { Program } from "../types";
 
@@ -13,225 +13,148 @@ interface ProgramsProps {
 }
 
 export default function Programs({ onSelectProgram }: ProgramsProps) {
-  
-  // Theme styling mapping based on colorTheme property of the card
   const themeMap = {
     red: {
-      bg: "bg-[#FFF5F5]",
-      border: "border-[var(--color-accent-red)]",
-      headerBg: "bg-[var(--color-accent-red)]",
-      textAccent: "text-[var(--color-accent-red)]",
-      btnBg: "bg-[var(--color-accent-red)] hover:bg-[#E04B4B] text-white",
-      badgeBg: "bg-[var(--color-accent-red)]/10 text-[var(--color-accent-red)]"
+      panel: "bg-[#FFF4F1]",
+      icon: "bg-[#FFE4DC] text-[var(--color-primary)]",
+      accent: "bg-[var(--color-primary)]",
+      text: "text-[var(--color-primary)]",
     },
     blue: {
-      bg: "bg-[#F4FAFF]",
-      border: "border-[var(--color-accent-blue)]",
-      headerBg: "bg-[var(--color-accent-blue)]",
-      textAccent: "text-[var(--color-accent-blue)]",
-      btnBg: "bg-[var(--color-accent-blue)] hover:bg-[#4E9ADC] text-white",
-      badgeBg: "bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)]"
+      panel: "bg-[#F0F7FF]",
+      icon: "bg-[#E2F1FF] text-[var(--color-accent-blue)]",
+      accent: "bg-[var(--color-accent-blue)]",
+      text: "text-[var(--color-accent-blue)]",
     },
     teal: {
-      bg: "bg-[#FAF7F2]",
-      border: "border-[var(--color-primary)]",
-      headerBg: "bg-[var(--color-primary)]",
-      textAccent: "text-[var(--color-primary)]",
-      btnBg: "bg-[var(--color-primary)] hover:bg-[#D97924] text-white",
-      badgeBg: "bg-[var(--color-primary)]/10 text-[var(--color-primary)]"
+      panel: "bg-[#F0FBF9]",
+      icon: "bg-[#DDF8F4] text-[var(--color-accent-green)]",
+      accent: "bg-[var(--color-accent-green)]",
+      text: "text-[var(--color-accent-green)]",
     },
     orange: {
-      bg: "bg-[#FFFBF5]",
-      border: "border-[var(--color-primary)]",
-      headerBg: "bg-[var(--color-primary)]",
-      textAccent: "text-[var(--color-primary)]",
-      btnBg: "bg-[var(--color-primary)] hover:bg-[#D97924] text-white",
-      badgeBg: "bg-[var(--color-primary)]/10 text-[var(--color-primary)]"
+      panel: "bg-[#FFF8E8]",
+      icon: "bg-[#FFF0C8] text-[#B78016]",
+      accent: "bg-[var(--color-accent-yellow)]",
+      text: "text-[#B78016]",
     },
     green: {
-      bg: "bg-[#F7FCF8]",
-      border: "border-[var(--color-accent-green)]",
-      headerBg: "bg-[var(--color-accent-green)]",
-      textAccent: "text-[var(--color-accent-green)]",
-      btnBg: "bg-[var(--color-accent-green)] hover:bg-[#6FA059] text-white",
-      badgeBg: "bg-[var(--color-accent-green)]/10 text-[var(--color-accent-green)]"
-    }
+      panel: "bg-[#F0FBF9]",
+      icon: "bg-[#DDF8F4] text-[var(--color-accent-green)]",
+      accent: "bg-[var(--color-accent-green)]",
+      text: "text-[var(--color-accent-green)]",
+    },
   };
 
-  const handleChooseProgram = (programName: string) => {
-    onSelectProgram(programName);
+  const iconMap = {
+    preparation: <GraduationCap className="h-6 w-6" />,
+    homework: <PencilRuler className="h-6 w-6" />,
+    gaps: <BookOpen className="h-6 w-6" />,
+    kazakh: <Languages className="h-6 w-6" />,
+    english: <Languages className="h-6 w-6" />,
+    individual: <UserRoundCheck className="h-6 w-6" />,
   };
 
   return (
-    <section id="programs" className="py-24 bg-[var(--color-bg)]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Section Header */}
-        <div className="text-center max-w-2xl mx-auto mb-20 animate-fade-in">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] mb-4">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
-            <span className="font-display text-[11px] font-bold tracking-wider uppercase">Программы обучения</span>
+    <section id="programs" className="bg-white py-24">
+      <div className="section-shell">
+        <div className="mx-auto mb-14 max-w-3xl text-center">
+          <div className="mb-4 inline-flex items-center rounded-full bg-[#FFF4E8] px-4 py-2 font-display text-sm font-bold text-[var(--color-primary)]">
+            Образовательные направления
           </div>
-          
-          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-6 animate-pulse">
-            Наши Учебные Направления
+          <h2 className="font-sans text-3xl font-black leading-tight text-[var(--color-ink)] md:text-5xl">
+            Программы, которые легко выбрать родителям
           </h2>
-          
-          <p className="font-sans text-base text-[var(--color-ink-light)] leading-relaxed">
-            Выберите оптимальную траекторию развития для вашего ребёнка. Цены прозрачны, а уютная атмосфера и заботливые бонусы уже включены в стоимость!
+          <p className="mt-5 text-lg font-semibold leading-8 text-[var(--color-ink-light)]">
+            Чёткая структура занятий, небольшие группы и понятная обратная связь после обучения.
           </p>
         </div>
 
-        {/* Pricing Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 items-stretch">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {PROGRAMS.map((prog: Program, index) => {
             const styles = themeMap[prog.colorTheme] || themeMap.blue;
-            const isHighlight = prog.id === "preparation"; // School prep is the focus promotion (HIT)
+            const isHighlight = prog.id === "preparation";
+            const progress = prog.id === "preparation" ? "92%" : prog.id === "homework" ? "84%" : "76%";
 
             return (
-              <motion.div
+              <motion.article
                 key={prog.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 18 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                whileHover={{ y: -8 }}
-                className={`relative flex flex-col justify-between bg-white rounded-[32px] border transition-all duration-300 h-full overflow-hidden ${
-                  isHighlight 
-                    ? `border-[var(--color-primary)] shadow-xl shadow-[rgba(242,143,59,0.15)] ring-4 ring-[var(--color-primary)]/10` 
-                    : "border-[rgba(0,0,0,0.05)] shadow-sm hover:border-[rgba(0,0,0,0.12)]"
+                viewport={{ once: true, margin: "-80px" }}
+                transition={{ duration: 0.35, delay: index * 0.04 }}
+                className={`flex h-full flex-col rounded-[24px] border bg-white p-5 smooth-shadow transition-transform hover:-translate-y-1 ${
+                  isHighlight ? "border-[var(--color-primary)]" : "border-[#D8E5F1]"
                 }`}
               >
-                
-                {/* Visual Accent Top Bar */}
-                <div className={`h-4 w-full ${styles.headerBg}`} />
-
-                {/* Main Content Info */}
-                <div className="p-8 flex-grow">
-                  {/* Badge & Program Header */}
-                  <div className="flex items-center justify-between gap-4 mb-4">
-                    <span className="font-display text-[10px] font-semibold text-[var(--color-ink-light)] block uppercase tracking-wide">
-                      {prog.id === "kazakh" || prog.id === "individual" ? "Индивидуально" : "В учебных группах"}
-                    </span>
-                    {prog.badge && (
-                      <span className={`px-3 py-1 rounded-full text-[10px] font-bold font-display ${styles.badgeBg} animate-pulse`}>
-                        {prog.badge}
-                      </span>
-                    )}
+                <div className={`flex min-h-[228px] flex-col rounded-[20px] ${styles.panel} p-5`}>
+                  <div className="flex items-start">
+                    <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${styles.icon}`}>
+                      {iconMap[prog.id as keyof typeof iconMap] || <BookOpen className="h-6 w-6" />}
+                    </div>
                   </div>
 
-                  <h3 className="font-serif text-2xl font-bold text-[var(--color-ink)] mb-2 text-left">
+                  <h3 className="mt-5 min-h-[58px] font-sans text-2xl font-black leading-tight text-[var(--color-ink)]">
                     {prog.name}
                   </h3>
-                  
-                  <p className="font-sans text-xs text-[var(--color-ink-light)] text-left leading-relaxed min-h-[36px] mb-6 border-b border-[rgba(0,0,0,0.04)] pb-4">
+                  <p className="mt-3 text-sm font-semibold leading-6 text-[var(--color-ink-light)]">
                     {prog.subtitle}
                   </p>
-
-                  {/* Pricing Block */}
-                  <div className="flex flex-col text-left mb-4">
-                    <div className="flex items-baseline gap-2">
-                      <span className="font-display text-4xl sm:text-5xl font-black text-[var(--color-ink)] tracking-tight">
-                        {prog.price} ₸
-                      </span>
-                      <span className="font-sans text-xs font-semibold text-[var(--color-ink-light)]">
-                        / {prog.period}
-                      </span>
-                    </div>
-
-                    {/* Old Price block if available */}
-                    {prog.oldPrice ? (
-                      <div className="flex items-center gap-1.5 mt-1.5 text-xs text-[var(--color-ink-light)]">
-                        <span>Старая цена:</span>
-                        <span className="line-through text-[var(--color-accent-red)] font-bold">{prog.oldPrice} ₸</span>
-                      </div>
-                    ) : (
-                      <div className="h-4" /> // Spacing placeholder
-                    )}
-                  </div>
-
-                  {/* High Conversion Green Banner (FOMO) */}
-                  <div className="bg-[var(--color-accent-green)]/10 border border-[var(--color-accent-green)]/20 rounded-2xl p-3 mb-6 flex items-center gap-2.5 text-left">
-                    <div className="w-5 h-5 rounded-full bg-[var(--color-accent-green)] flex items-center justify-center text-white shrink-0">
-                      <Check className="w-3 h-3 text-white stroke-[3px]" />
-                    </div>
-                    <span className="font-sans text-[11px] font-bold text-[var(--color-accent-green)]">
-                      {prog.discountBanner}
-                    </span>
-                  </div>
-
-                  <p className="font-display text-[10px] font-bold text-[var(--color-ink)] uppercase tracking-wider mb-3 text-left">
-                    Частота занятий: {prog.frequency}
-                  </p>
-
-                  {/* Options alternative packages (if any) */}
-                  {prog.options && (
-                    <div className="bg-[var(--color-bg)]/80 p-3 rounded-2xl border border-[rgba(0,0,0,0.05)] mb-6 flex flex-col gap-1.5 text-left text-xs">
-                      <span className="font-semibold text-[var(--color-ink-light)] text-[11px]">Альтернативный формат:</span>
-                      {prog.options.map((option, oIdx) => (
-                        <div key={oIdx} className="flex justify-between items-center text-[var(--color-ink)] text-[11px]">
-                          <span>• {option.label}</span>
-                          <span className="font-bold">{option.price}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  {/* Bullet Benefits Checkmarks */}
-                  <ul className="flex flex-col gap-3 text-left border-t border-[rgba(0,0,0,0.04)] pt-6">
-                    {prog.benefits.slice(0, 5).map((ben, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2.5">
-                        <div className={`w-5 h-5 rounded-full ${styles.badgeBg} flex items-center justify-center shrink-0 mt-0.5`}>
-                          <Check className={`w-3 h-3 ${styles.textAccent} stroke-[3px]`} />
-                        </div>
-                        <span className="font-sans text-xs text-[var(--color-ink-light)] leading-tight">
-                          {ben}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
-                {/* Footer Bonuses & Interactive Action */}
-                <div className="px-8 pb-8 pt-4 bg-[var(--color-bg)] rounded-b-[30px] border-t border-[rgba(0,0,0,0.04)] text-left">
-                  <div className="flex items-center gap-2 mb-4">
-                    <Gift className={`w-4 h-4 ${styles.textAccent}`} />
-                    <span className="font-display text-[10px] font-bold text-[var(--color-ink)] uppercase tracking-wide">
-                      Вежливые бонусы BALATIME:
-                    </span>
+                <div className="flex flex-1 flex-col px-2 pt-5">
+                  <div className="flex min-h-[82px] items-end justify-between gap-4 border-b border-[#E1EAF3] pb-5">
+                    <div>
+                      <div className="font-display text-4xl font-black text-[var(--color-ink)]">
+                        {prog.price} ₸
+                      </div>
+                      <div className="mt-1 text-sm font-bold text-[var(--color-ink-light)]">за {prog.period}</div>
+                    </div>
+                    <div className="rounded-2xl bg-[#F6F9FC] px-3 py-2 text-right">
+                      <Clock3 className="ml-auto h-4 w-4 text-[var(--color-accent-blue)]" />
+                      <div className="mt-1 text-xs font-extrabold text-[var(--color-ink-light)]">расписание</div>
+                    </div>
                   </div>
-                  
-                  <ul className="flex flex-col gap-1.5 mb-6">
-                    {prog.bonuses.map((bonus, boIdx) => (
-                      <li key={boIdx} className="font-sans text-[11px] text-[var(--color-ink-light)] flex items-center gap-1.5">
-                        <span>• {bonus}</span>
-                      </li>
-                    ))}
-                  </ul>
 
-                  {/* Highlight-specific button / standard action */}
+                  <div className="mt-5">
+                    <div className="mb-2 flex items-center justify-between text-xs font-black text-[var(--color-ink-light)]">
+                      <span>Подходит для старта</span>
+                      <span>{progress}</span>
+                    </div>
+                    <div className="h-2 overflow-hidden rounded-full bg-[#EAF0F6]">
+                      <div className={`h-full rounded-full ${styles.accent}`} style={{ width: progress }} />
+                    </div>
+                  </div>
+
+                  <div className="mt-5 flex min-h-[226px] flex-col rounded-2xl border border-[#E1EAF3] bg-[#F8FBFE] p-4">
+                    <div className="mb-3 flex items-center gap-2 text-sm font-black text-[var(--color-ink)]">
+                      <Gift className={`h-4 w-4 ${styles.text}`} />
+                      Что входит
+                    </div>
+                    <ul className="space-y-3">
+                      {prog.benefits.slice(0, 4).map((benefit) => (
+                        <li key={benefit} className="flex gap-2 text-sm font-semibold leading-5 text-[var(--color-ink-light)]">
+                          <Check className={`mt-0.5 h-4 w-4 shrink-0 ${styles.text}`} />
+                          <span>{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
                   <button
-                    onClick={() => handleChooseProgram(prog.name)}
-                    className={`w-full py-3 rounded-full font-display font-bold text-xs tracking-wider transition-all duration-300 hover:scale-[1.01] active:translate-y-0.5 cursor-pointer text-center text-white uppercase ${
-                      isHighlight
-                        ? "bg-[var(--color-primary)] hover:bg-[#D97924] shadow-lg shadow-[rgba(242,143,59,0.3)]"
-                        : "bg-[var(--color-accent-blue)] hover:bg-[#4E9ADC] shadow-sm"
+                    onClick={() => onSelectProgram(prog.name)}
+                    className={`mt-auto inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full px-5 py-4 font-display text-sm font-bold text-white transition-transform hover:-translate-y-0.5 ${
+                      isHighlight ? "bg-[var(--color-primary)]" : "bg-[var(--color-accent-blue)]"
                     }`}
                   >
-                    Записаться звонок
+                    Записаться
+                    <ArrowRight className="h-4 w-4" />
                   </button>
                 </div>
-
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
-
-        {/* Small conversion booster text below the grid */}
-        <div className="mt-12 text-center text-xs font-semibold text-[var(--color-ink-light)]">
-          * Все учебные материалы, рабочие тетради, карандаши и перекусы входят в стоимость. Никаких隠 скрытых комиссий!
-        </div>
-
       </div>
     </section>
   );

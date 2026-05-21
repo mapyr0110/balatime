@@ -22,12 +22,8 @@ export default function Testimonials() {
   const activeReview = REVIEWS[currentIndex];
 
   return (
-    <section id="testimonials" className="py-24 bg-white relative overflow-hidden">
-      {/* Decorative cute cloud/blob graphics in background */}
-      <div className="absolute top-10 right-10 w-32 h-32 rounded-full bg-[var(--color-accent-green)]/10 opacity-60 blur-xl pointer-events-none" />
-      <div className="absolute bottom-12 left-12 w-48 h-48 rounded-full bg-[var(--color-primary)]/10 opacity-60 blur-2xl pointer-events-none" />
-
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section id="testimonials" className="py-24 bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
@@ -36,7 +32,7 @@ export default function Testimonials() {
             <span className="font-display text-[11px] font-bold tracking-wider uppercase">Отзывы родителей</span>
           </div>
           
-          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4 animate-pulse">
+          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4">
             Почему мамы и папы Алматы доверяют нам
           </h2>
           
@@ -46,7 +42,7 @@ export default function Testimonials() {
         </div>
 
         {/* Carousel Block Parent Container */}
-        <div className="relative bg-white rounded-[36px] border border-[rgba(0,0,0,0.05)] p-8 md:p-14 shadow-lg shadow-[rgba(45,52,54,0.03)]">
+        <div className="relative bg-white rounded-[28px] border border-[#D8E5F1] p-8 md:p-14 smooth-shadow">
           {/* Big Quote background Icon */}
           <div className="absolute top-6 right-8 text-[var(--color-bg)] select-none pointer-events-none">
             <Quote className="w-24 h-24 stroke-[1.5px] rotate-180" />

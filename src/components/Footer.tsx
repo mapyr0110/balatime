@@ -4,7 +4,7 @@
  */
 
 import React from "react";
-import { Sparkles, Phone, Mail, MapPin, Instagram, Clock, MessageSquare } from "lucide-react";
+import { BookOpenCheck, Phone, Mail, MapPin, Instagram, Clock, MessageSquare } from "lucide-react";
 import { CONTACT_INFO } from "../data/websiteData";
 
 export default function Footer() {
@@ -40,7 +40,7 @@ export default function Footer() {
           <div className="lg:col-span-4 flex flex-col items-start gap-4 text-left">
             <a href="#hero" onClick={handleScrollToTop} className="flex items-center gap-2 group">
               <div className="w-10 h-10 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center text-white shadow-md shadow-[rgba(242,143,59,0.2)]">
-                <Sparkles className="w-5 h-5 fill-current" />
+                <BookOpenCheck className="w-5 h-5" />
               </div>
               <div className="flex flex-col">
                 <span className="font-brand text-2xl font-bold tracking-tight text-white group-hover:text-[var(--color-primary)] transition-colors leading-none">

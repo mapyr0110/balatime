@@ -179,7 +179,6 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
               })}
             </div>
 
-            {/* Micro value pro-badge */}
             <div className="bg-[var(--color-primary)]/10 border border-[var(--color-primary)]/20 p-5 rounded-2xl flex items-start gap-3 mt-8">
               <Award className="w-5 h-5 text-[var(--color-primary)] shrink-0 mt-0.5" />
               <p className="font-sans text-xs text-[var(--color-ink)] leading-relaxed">
@@ -190,7 +189,7 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
 
           {/* Right Column: Lead Registration Form */}
           <div className="lg:col-span-6">
-            <div className="bg-white rounded-[36px] p-8 md:p-12 border border-[rgba(0,0,0,0.05)] shadow-xl text-left relative">
+            <div className="bg-white rounded-[28px] p-8 md:p-12 border border-[#D8E5F1] smooth-shadow text-left relative">
               
               <h3 className="font-serif text-2xl md:text-3xl font-bold text-[var(--color-ink)] mb-2 leading-tight">
                 Запишитесь на бесплатный пробный урок
@@ -268,8 +267,8 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
                     className="w-full px-4 py-3.5 rounded-2xl border border-[rgba(0,0,0,0.08)] bg-[var(--color-bg)] text-xs sm:text-sm text-[var(--color-ink)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-accent-blue)] focus:border-transparent transition-all appearance-none cursor-pointer"
                   >
                     <option value="">-- Общая консультация и подбор курса --</option>
-                    <option value="Подготовка к школе">Подготовка к школе (ХИТ)</option>
-                    <option value="Домашняя работа (1-4 классы)">Домашняя работа (1-4 классы) (SALE)</option>
+                    <option value="Подготовка к школе">Подготовка к школе</option>
+                    <option value="Домашняя работа (1-4 классы)">Домашняя работа (1-4 классы)</option>
                     <option value="Работа с пробелами (1-4 класс)">Работа с пробелами (1-4 класс)</option>
                     <option value="Казахский язык с нуля">Казахский язык с нуля</option>
                     <option value="General English (в группах)">General English (в группах)</option>
@@ -299,7 +298,7 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
                 {/* Submits buttons */}
                 <button
                   type="submit"
-                  className="w-full py-3.5 bg-[var(--color-primary)] hover:bg-[#D97924] text-white font-display font-bold text-xs tracking-wider uppercase rounded-full transition-all duration-300 hover:scale-[1.01] flex items-center justify-center gap-3 shadow-lg shadow-[rgba(242,143,59,0.3)] cursor-pointer"
+                  className="w-full min-h-14 py-3.5 bg-[var(--color-primary)] hover:bg-[#D97924] text-white font-display font-bold text-sm rounded-full transition-transform duration-300 hover:-translate-y-0.5 flex items-center justify-center gap-3 cursor-pointer"
                 >
                   <MessageSquare className="w-5 h-5 fill-current" />
                   <span>Отправить в WhatsApp</span>

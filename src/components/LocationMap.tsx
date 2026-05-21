@@ -4,7 +4,7 @@
  */
 
 import { motion } from "motion/react";
-import { MapPin, Navigation, Clock, ShieldCheck, Sparkles } from "lucide-react";
+import { MapPin, Navigation, Clock, ShieldCheck } from "lucide-react";
 import { CONTACT_INFO, CLASSROOM_INTERIOR } from "../data/websiteData";
 
 export default function LocationMap() {
@@ -14,12 +14,11 @@ export default function LocationMap() {
         
         {/* Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] mb-4">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
+          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] mb-4">
             <span className="font-display text-[11px] font-bold tracking-wider uppercase">Где мы находимся</span>
           </div>
           
-          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4 animate-pulse">
+          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4">
             Удобная Локация в Алматы
           </h2>
           
@@ -90,7 +89,7 @@ export default function LocationMap() {
                 referrerPolicy="no-referrer"
                 className="w-full h-full object-cover select-none transition-transform duration-700 group-hover:scale-[1.03]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-black/35 pointer-events-none" />
               <div className="absolute bottom-6 left-6 right-6 text-left">
                 <span className="bg-white text-[var(--color-accent-blue)] font-display text-[10px] uppercase font-extrabold tracking-wider px-3 py-1 rounded-full">
                   Реальный интерьер

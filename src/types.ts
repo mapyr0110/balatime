@@ -12,7 +12,6 @@ export interface Program {
   period: string; // "месяц", "занятие", etc.
   frequency: string; // e.g., "5 дней в неделю", "3 раза в неделю"
   options?: { label: string; price: string }[]; // Any additional pricing models
-  badge?: "ХИТ" | "SALE" | "АКЦИЯ" | "НОВИНКА" | "ПОПУЛЯРНО";
   discountBanner?: string; // e.g., "5 000 ₸ дешевле на ~15%"
   benefits: string[];
   bonuses: string[]; // e.g., "Бесплатный чай и печенье", "Рабочая тетрадь в подарок"

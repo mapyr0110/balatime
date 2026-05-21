@@ -5,7 +5,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Sparkles, Image as ImageIcon } from "lucide-react";
+import { Image as ImageIcon } from "lucide-react";
 import { GALLERY } from "../data/websiteData";
 
 type CategoryType = "все" | "классы" | "процесс" | "праздники";
@@ -30,12 +30,11 @@ export default function Gallery() {
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] mb-4">
-            <Sparkles className="w-3.5 h-3.5 fill-current" />
+          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-accent-blue)]/10 text-[var(--color-accent-blue)] mb-4">
             <span className="font-display text-[11px] font-bold tracking-wider uppercase">Фотогалерея</span>
           </div>
           
-          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4 animate-pulse">
+          <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4">
             Жизнь внутри BALATIME SCHOOL
           </h2>
           
@@ -84,8 +83,7 @@ export default function Gallery() {
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
                 />
 
-                {/* Dark rich hover backdrop overlay details */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 text-left">
+                <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6 text-left">
                   <div className="flex items-center gap-2 mb-2 text-[var(--color-accent-blue)]">
                     <ImageIcon className="w-4 h-4" />
                     <span className="font-display text-[10px] uppercase font-bold tracking-wider">

@@ -4,13 +4,11 @@
  */
 
 import { Program, Review, Teacher, GalleryItem, FAQ } from "../types";
+import heroIllustrationUrl from "../assets/images/hero_illustration_1779380562793.png";
+import classroomInteriorUrl from "../assets/images/classroom_interior_1779380588248.png";
 
-// Images generated or curated
-// Hero illustration path: "/src/assets/images/hero_illustration_1779380562793.png"
-// Classroom photo path: "/src/assets/images/classroom_interior_1779380588248.png"
-
-export const HERO_ILLUSTRATION = "/src/assets/images/hero_illustration_1779380562793.png";
-export const CLASSROOM_INTERIOR = "/src/assets/images/classroom_interior_1779380588248.png";
+export const HERO_ILLUSTRATION = heroIllustrationUrl;
+export const CLASSROOM_INTERIOR = classroomInteriorUrl;
 
 export const PROGRAMS: Program[] = [
   {
@@ -25,7 +23,6 @@ export const PROGRAMS: Program[] = [
       { label: "5 дней в неделю (2 часа)", price: "35 000 ₸" },
       { label: "3 дня в неделю (2 часа)", price: "25 000 ₸" }
     ],
-    badge: "ХИТ",
     discountBanner: "7 000 ₸ дешевле на ~17%",
     benefits: [
       "Обучение чтению и грамоте",
@@ -49,7 +46,6 @@ export const PROGRAMS: Program[] = [
     price: "30 000",
     period: "месяц",
     frequency: "5 дней в неделю по 1.5 часа",
-    badge: "SALE",
     discountBanner: "Родительское спокойствие бесценно!",
     benefits: [
       "Разбор сложных тем по школьной программе",
@@ -59,7 +55,7 @@ export const PROGRAMS: Program[] = [
       "Помощь на двух языках (русский / казахский)"
     ],
     bonuses: [
-      "☕️ Зона ожидания с кофе и чаем для родителей",
+      "Зона ожидания с кофе и чаем для родителей",
       "🧸 Доступ в игровую зону после занятий",
       "💬 Чат со статистикой успеваемости для мамы"
     ],
@@ -72,7 +68,6 @@ export const PROGRAMS: Program[] = [
     price: "25 000",
     period: "месяц",
     frequency: "3 раза в неделю по 1.5 часа",
-    badge: "АКЦИЯ",
     discountBanner: "Поднимем оценки на 1-2 балла за месяц!",
     benefits: [
       "Персональная диагностика уровня знаний",
@@ -94,7 +89,6 @@ export const PROGRAMS: Program[] = [
     price: "2 500",
     period: "занятие",
     frequency: "Индивидуальный график, 1 час",
-    badge: "ПОПУЛЯРНО",
     discountBanner: "Первый урок-проба бесплатно!",
     benefits: [
       "Интерактивная языковая среда и игры",
@@ -115,7 +109,6 @@ export const PROGRAMS: Program[] = [
     price: "28 000",
     period: "месяц",
     frequency: "3 раза в неделю по 1.5 часа",
-    badge: "ПОПУЛЯРНО",
     discountBanner: "Разговорный клуб в субботу бесплатно!",
     benefits: [
       "Игровая методика без скучной зубрежки",
@@ -136,7 +129,6 @@ export const PROGRAMS: Program[] = [
     price: "5 000",
     period: "час",
     frequency: "Свободный график, темп и программа",
-    badge: "НОВИНКА",
     discountBanner: "Максимальный фокус на цели",
     benefits: [
       "100% времени преподавателя — вашему ребёнку",
