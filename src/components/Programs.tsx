@@ -4,7 +4,15 @@
  */
 
 import { motion } from "motion/react";
-import { ArrowRight, BookOpen, Check, Clock3, Gift, GraduationCap, Languages, PencilRuler, UserRoundCheck } from "lucide-react";
+import {
+  ArrowRight,
+  BookOpen,
+  Check,
+  GraduationCap,
+  Languages,
+  PencilRuler,
+  UserRoundCheck,
+} from "lucide-react";
 import { PROGRAMS } from "../data/websiteData";
 import { Program } from "../types";
 
@@ -17,32 +25,32 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
     red: {
       panel: "bg-[#FFF4F1]",
       icon: "bg-[#FFE4DC] text-[var(--color-primary)]",
-      accent: "bg-[var(--color-primary)]",
       text: "text-[var(--color-primary)]",
+      button: "bg-[var(--color-primary)]",
     },
     blue: {
       panel: "bg-[#F0F7FF]",
       icon: "bg-[#E2F1FF] text-[var(--color-accent-blue)]",
-      accent: "bg-[var(--color-accent-blue)]",
       text: "text-[var(--color-accent-blue)]",
+      button: "bg-[var(--color-accent-blue)]",
     },
     teal: {
       panel: "bg-[#F0FBF9]",
       icon: "bg-[#DDF8F4] text-[var(--color-accent-green)]",
-      accent: "bg-[var(--color-accent-green)]",
       text: "text-[var(--color-accent-green)]",
+      button: "bg-[var(--color-accent-green)]",
     },
     orange: {
       panel: "bg-[#FFF8E8]",
       icon: "bg-[#FFF0C8] text-[#B78016]",
-      accent: "bg-[var(--color-accent-yellow)]",
       text: "text-[#B78016]",
+      button: "bg-[var(--color-accent-yellow)] text-[var(--color-ink)]",
     },
     green: {
       panel: "bg-[#F0FBF9]",
       icon: "bg-[#DDF8F4] text-[var(--color-accent-green)]",
-      accent: "bg-[var(--color-accent-green)]",
       text: "text-[var(--color-accent-green)]",
+      button: "bg-[var(--color-accent-green)]",
     },
   };
 
@@ -70,11 +78,10 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 xl:grid-cols-3">
           {PROGRAMS.map((prog: Program, index) => {
             const styles = themeMap[prog.colorTheme] || themeMap.blue;
             const isHighlight = prog.id === "preparation";
-            const progress = prog.id === "preparation" ? "92%" : prog.id === "homework" ? "84%" : "76%";
 
             return (
               <motion.article
@@ -88,10 +95,8 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                 }`}
               >
                 <div className={`flex min-h-[228px] flex-col rounded-[20px] ${styles.panel} p-5`}>
-                  <div className="flex items-start">
-                    <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${styles.icon}`}>
-                      {iconMap[prog.id as keyof typeof iconMap] || <BookOpen className="h-6 w-6" />}
-                    </div>
+                  <div className={`flex h-12 w-12 items-center justify-center rounded-2xl ${styles.icon}`}>
+                    {iconMap[prog.id as keyof typeof iconMap] || <BookOpen className="h-6 w-6" />}
                   </div>
 
                   <h3 className="mt-5 min-h-[58px] font-sans text-2xl font-black leading-tight text-[var(--color-ink)]">
@@ -103,37 +108,23 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                 </div>
 
                 <div className="flex flex-1 flex-col px-2 pt-5">
-                  <div className="flex min-h-[82px] items-end justify-between gap-4 border-b border-[#E1EAF3] pb-5">
-                    <div>
-                      <div className="font-display text-4xl font-black text-[var(--color-ink)]">
-                        {prog.price} ₸
-                      </div>
-                      <div className="mt-1 text-sm font-bold text-[var(--color-ink-light)]">за {prog.period}</div>
+                  <div className="min-h-[82px] border-b border-[#E1EAF3] pb-5">
+                    <div className="font-display text-4xl font-black text-[var(--color-ink)]">
+                      {prog.price} ₸
                     </div>
-                    <div className="rounded-2xl bg-[#F6F9FC] px-3 py-2 text-right">
-                      <Clock3 className="ml-auto h-4 w-4 text-[var(--color-accent-blue)]" />
-                      <div className="mt-1 text-xs font-extrabold text-[var(--color-ink-light)]">расписание</div>
+                    <div className="mt-1 text-sm font-bold text-[var(--color-ink-light)]">
+                      за {prog.period}
                     </div>
                   </div>
 
-                  <div className="mt-5">
-                    <div className="mb-2 flex items-center justify-between text-xs font-black text-[var(--color-ink-light)]">
-                      <span>Подходит для старта</span>
-                      <span>{progress}</span>
-                    </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-[#EAF0F6]">
-                      <div className={`h-full rounded-full ${styles.accent}`} style={{ width: progress }} />
-                    </div>
-                  </div>
-
-                  <div className="mt-5 flex min-h-[226px] flex-col rounded-2xl border border-[#E1EAF3] bg-[#F8FBFE] p-4">
-                    <div className="mb-3 flex items-center gap-2 text-sm font-black text-[var(--color-ink)]">
-                      <Gift className={`h-4 w-4 ${styles.text}`} />
-                      Что входит
-                    </div>
+                  <div className="mt-5 flex flex-1 flex-col rounded-2xl border border-[#E1EAF3] bg-[#F8FBFE] p-4">
+                    <div className="mb-3 text-sm font-black text-[var(--color-ink)]">Что входит</div>
                     <ul className="space-y-3">
                       {prog.benefits.slice(0, 4).map((benefit) => (
-                        <li key={benefit} className="flex gap-2 text-sm font-semibold leading-5 text-[var(--color-ink-light)]">
+                        <li
+                          key={benefit}
+                          className="flex gap-2 text-sm font-semibold leading-5 text-[var(--color-ink-light)]"
+                        >
                           <Check className={`mt-0.5 h-4 w-4 shrink-0 ${styles.text}`} />
                           <span>{benefit}</span>
                         </li>
@@ -143,8 +134,8 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
 
                   <button
                     onClick={() => onSelectProgram(prog.name)}
-                    className={`mt-auto inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full px-5 py-4 font-display text-sm font-bold text-white transition-transform hover:-translate-y-0.5 ${
-                      isHighlight ? "bg-[var(--color-primary)]" : "bg-[var(--color-accent-blue)]"
+                    className={`mt-5 inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-full px-5 py-4 font-display text-sm font-bold text-white transition-transform hover:-translate-y-0.5 ${
+                      isHighlight ? "bg-[var(--color-primary)]" : styles.button
                     }`}
                   >
                     Записаться
