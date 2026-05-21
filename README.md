@@ -1,20 +1,52 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# BALATIME SCHOOL
 
-# Run and deploy your AI Studio app
-
-This contains everything you need to run your app locally.
-
-View your app in AI Studio: https://ai.studio/apps/e4bcb406-d47c-4e7f-b524-b96f35783047
+Сайт для BALATIME SCHOOL на React + Vite.
 
 ## Run Locally
 
-**Prerequisites:**  Node.js
-
+**Prerequisites:** Node.js
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+
+```bash
+npm install
+```
+
+2. Run the app:
+
+```bash
+npm run dev
+```
+
+## Deploy to GitHub Pages
+
+Репозиторий: `balatime`
+
+В `vite.config.ts` уже указан правильный base:
+
+```ts
+base: '/balatime/'
+```
+
+Деплой настроен через GitHub Actions в `.github/workflows/deploy.yml`.
+
+Чтобы залить проект в GitHub:
+
+```bash
+git init
+git add .
+git commit -m "Initial deploy"
+git branch -M main
+git remote add origin https://github.com/USERNAME/balatime.git
+git push -u origin main
+```
+
+После пуша открой GitHub:
+
+`Settings` -> `Pages` -> `Build and deployment` -> `Source` -> `GitHub Actions`
+
+Сайт будет доступен по адресу:
+
+```txt
+https://USERNAME.github.io/balatime/
+```
