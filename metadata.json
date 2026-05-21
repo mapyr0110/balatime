@@ -1,0 +1,6 @@
+{
+  "name": "BALATIME SCHOOL",
+  "description": "Премиальный детский образовательный центр в Алматы. Подготовка к школе, английский, домашняя работа, казахский язык с теплой атмосферой.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

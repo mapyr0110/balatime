@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Inter:wght@300..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Outfit:wght@300..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-display: "Outfit", sans-serif;
+  --font-serif: "Playfair Display", serif;
+  --font-brand: "Fredoka", sans-serif;
+
+  --color-bg: #F3F4F6;
+  --color-ink: #2D3436;
+  --color-ink-light: #636E72;
+  --color-primary: #F28F3B;
+  --color-accent-red: #FF5E5E;
+  --color-accent-blue: #5DA9E9;
+  --color-accent-green: #7FB069;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-bg);
+  color: var(--color-ink); /* Deep charcoal ink */
+}
+
+/* Custom scrollbar to look sleek and friendly */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #E9E2D7;
+  border-radius: 9999px;
+  border: 3px solid var(--color-bg);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #CBD5E1;
+}
+
+/* Custom smooth entries and transitions */
+.smooth-shadow {
+  box-shadow: 0 4px 20px -2px rgba(45, 52, 54, 0.04);
+}
+.smooth-shadow-deep {
+  box-shadow: 0 10px 30px -5px rgba(45, 52, 54, 0.08), 0 4px 12px -2px rgba(45, 52, 54, 0.03);
+}
