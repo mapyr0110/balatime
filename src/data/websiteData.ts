@@ -5,6 +5,10 @@
 
 import { Program, Review, GalleryItem } from "../types";
 import classroomInteriorUrl from "../assets/images/classroom_interior_1779380588248.png";
+import img1Url from "../assets/images/img1.jpg";
+import img2Url from "../assets/images/img2.jpg";
+import img3Url from "../assets/images/img3.jpg";
+import img4Url from "../assets/images/img4.jpg";
 
 export const CLASSROOM_INTERIOR = classroomInteriorUrl;
 
@@ -183,28 +187,28 @@ export const GALLERY: GalleryItem[] = [
     id: "g2",
     title: "Наш учебный центр",
     category: "праздники",
-    imageUrl: "src/assets/images/img1.jpg",
+    imageUrl: img1Url,
     description: "Яркое оформление входной зоны — первое, что видят наши ученики каждый день"
   },
   {
     id: "g3",
     title: "Продлёнка — удобно, полезно, безопасно",
     category: "процесс",
-    imageUrl: "src/assets/images/img2.jpg",
+    imageUrl: img2Url,
     description: "Уютное место, где дети остаются после уроков под присмотром наших педагогов"
   },
   {
     id: "g4",
     title: "Мы находимся здесь",
     category: "процесс",
-    imageUrl: "src/assets/images/img3.jpg",
+    imageUrl: img3Url,
     description: "Наш центр расположен в удобном месте — легко найти и добраться"
   },
   {
     id: "g5",
     title: "Подготовка к школе",
     category: "классы",
-    imageUrl: "src/assets/images/img4.jpg",
+    imageUrl: img4Url,
     description: "Мышление, речь, грамота, счёт и прописи — всё, что нужно вашему ребёнку перед первым классом"
   },
 ];
