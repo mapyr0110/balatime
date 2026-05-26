@@ -3,11 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { Program, Review, Teacher, GalleryItem, FAQ } from "../types";
-import heroIllustrationUrl from "../assets/images/hero_illustration_1779380562793.png";
+import { Program, Review, GalleryItem } from "../types";
 import classroomInteriorUrl from "../assets/images/classroom_interior_1779380588248.png";
 
-export const HERO_ILLUSTRATION = heroIllustrationUrl;
 export const CLASSROOM_INTERIOR = classroomInteriorUrl;
 
 export const PROGRAMS: Program[] = [
@@ -37,7 +35,7 @@ export const PROGRAMS: Program[] = [
       "🥛 Полезный перекус (печенье + сок) включены",
       "🧠 Ежемесячная диагностика психолога"
     ],
-    colorTheme: "red"
+    colorTheme: "orange"
   },
   {
     id: "homework",
@@ -59,7 +57,7 @@ export const PROGRAMS: Program[] = [
       "🧸 Доступ в игровую зону после занятий",
       "💬 Чат со статистикой успеваемости для мамы"
     ],
-    colorTheme: "blue"
+    colorTheme: "green"
   },
   {
     id: "gaps",
@@ -80,7 +78,7 @@ export const PROGRAMS: Program[] = [
       "🎁 Пакет учебных материалов в подарок",
       "✨ Наградные звёзды и призы за старания"
     ],
-    colorTheme: "teal"
+    colorTheme: "green"
   },
   {
     id: "kazakh",
@@ -140,7 +138,7 @@ export const PROGRAMS: Program[] = [
       "📊 Подробный отчёт наставника после каждого урока",
       "🌟 Персональная программа мотиваций"
     ],
-    colorTheme: "teal"
+    colorTheme: "green"
   }
 ];
 
@@ -179,106 +177,42 @@ export const REVIEWS: Review[] = [
   }
 ];
 
-export const TEACHERS: Teacher[] = [
-  {
-    id: "teacher1",
-    name: "Алия Нуртасовна",
-    role: "Старший методист, Подготовка к школе",
-    experience: "12 лет опыта работы",
-    education: "КазНПУ им. Абая (Начальное образование и детская психология)",
-    bio: "Автор игровой методики бережной адаптации детей к первому классу. Знает секрет, как научить читать любого ребенка без слез за 4 недели.",
-    imageUrl: "https://images.unsplash.com/photo-1554774853-aae0a22c8aa4?auto=format&fit=crop&q=80&w=300&h=350"
-  },
-  {
-    id: "teacher2",
-    name: "Mrs. Emma Collins",
-    role: "Преподаватель Cambridge English (Native)",
-    experience: "7 лет опыта работы",
-    education: "University of Edinburgh (Linguistics), CELTA, TKT",
-    bio: "Специалист по преподаванию английского как иностранного для детей. Её уроки — это всегда феерия песен, мини-спектаклей и весёлого смеха.",
-    imageUrl: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&q=80&w=300&h=350"
-  },
-  {
-    id: "teacher3",
-    name: "Гульнара Сериковна",
-    role: "Учитель начальных классов и казахского языка",
-    experience: "9 лет опыта работы",
-    education: "КазНУ им. аль-Фараби (Казахская филология)",
-    bio: "Проводник детей в прекрасный мир родного языка. Внедряет авторские визуальные карты слов и интерактивные приложения для легкого обучения.",
-    imageUrl: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=300&h=350"
-  }
-];
-
 export const GALLERY: GalleryItem[] = [
-  {
-    id: "g1",
-    title: "Наш светлый современный класс",
-    category: "классы",
-    imageUrl: CLASSROOM_INTERIOR,
-    description: "Мягкое освещение, эргономичные парты и экологичные деревянные материалы."
-  },
+
   {
     id: "g2",
-    title: "Урок праздничного английского",
+    title: "Наш учебный центр",
     category: "праздники",
-    imageUrl: "https://images.unsplash.com/photo-1516627145497-ae6968895b74?auto=format&fit=crop&q=80&w=600&h=450",
-    description: "Изучаем традиции и весело играем в тематические квесты."
+    imageUrl: "src/assets/images/img1.jpg",
+    description: "Яркое оформление входной зоны — первое, что видят наши ученики каждый день"
   },
   {
     id: "g3",
-    title: "Процесс увлекательного чтения",
+    title: "Продлёнка — удобно, полезно, безопасно",
     category: "процесс",
-    imageUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&q=80&w=600&h=450",
-    description: "Работаем над слиянием слогов с помощью интерактивных кубиков и картинок."
+    imageUrl: "src/assets/images/img2.jpg",
+    description: "Уютное место, где дети остаются после уроков под присмотром наших педагогов"
   },
   {
     id: "g4",
-    title: "Игры на логику и воображение",
+    title: "Мы находимся здесь",
     category: "процесс",
-    imageUrl: "https://images.unsplash.com/photo-1510312305653-8ed496efae75?auto=format&fit=crop&q=80&w=600&h=450",
-    description: "Развиваем пространственное мышление на переменах."
+    imageUrl: "src/assets/images/img3.jpg",
+    description: "Наш центр расположен в удобном месте — легко найти и добраться"
   },
   {
     id: "g5",
-    title: "Игровая зона для разгрузки",
+    title: "Подготовка к школе",
     category: "классы",
-    imageUrl: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?auto=format&fit=crop&q=80&w=600&h=450",
-    description: "Место, где можно поиграть и обсудить с друзьями захватывающие идеи."
+    imageUrl: "src/assets/images/img4.jpg",
+    description: "Мышление, речь, грамота, счёт и прописи — всё, что нужно вашему ребёнку перед первым классом"
   },
-  {
-    id: "g6",
-    title: "Новый год в BALATIME SCHOOL",
-    category: "праздники",
-    imageUrl: "https://images.unsplash.com/photo-1544982503-9f984c14501a?auto=format&fit=crop&q=80&w=600&h=450",
-    description: "Сладкие подарки и общение с Санта Клаусом исключительно на английском!"
-  }
-];
-
-export const FAQS: FAQ[] = [
-  {
-    question: "Со скольки лет вы принимаете детей?",
-    answer: "Основные программы рассчитаны на детей от 5 до 12 лет (дошкольники и начальные 1-4 классы). Индивидуальные занятия доступны также для подростков."
-  },
-  {
-    question: "Сколько детей занимается в одной группе?",
-    answer: "Для комфорта вашего ребенка и максимального внимания учителя мы строго ограничиваем группы — до 6-8 детей в зависимости от программы."
-  },
-  {
-    question: "Есть ли пропущенные занятия из-за болезни?",
-    answer: "Конечно! При предоставлении медицинской справки мы компенсируем пропуски в виде индивидуальной отработки или переноса 50% стоимости на следующий месяц."
-  },
-  {
-    question: "Какие методики вы используете?",
-    answer: "Мы используем микс классических академических программ РК, Кембриджских коммуникативных методик преподавания английского языка и адаптивных игровых методик BALATIME SCHOOL: никакого принуждения, только вовлечение и искреннее любопытство."
-  }
 ];
 
 export const CONTACT_INFO = {
-  address: "г. Алматы, Бостандыкский район, ул. Гагарина 206б, блок 3 (ЖК 'Комфорт')",
-  landmark: "Рядом со ст. метро 'Алатау', удобный заезд со стороны ул. Розыбакиева и ул. Гагарина.",
+  address: "город Алматы, мкр Карасу, ул Центральная 165А",
+  landmark: "Офис: 2 этаж, 1 кабинет",
   phones: ["+7 747 158 14 93"],
   whatsapp: "https://wa.me/77471581493?text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%AF%20%D1%85%D0%BE%D1%87%D1%83%20%D0%B7%D0%B0%D0%BF%D0%B8%D1%81%D0%B0%D1%82%D1%8C%20%D1%80%D0%B5%D0%B1%D0%B5%D0%BD%D0%BA%D0%B0%20%D0%BD%D0%B0%20%D0%BF%D1%80%D0%BE%D0%B1%D0%BD%D1%8B%D0%B9%20%D1%83%D1%80%D0%BE%D0%BA.",
-  email: "hello@woset.kz",
-  instagram: "https://instagram.com/woset_english",
-  workingHours: "Пн - Сб: 08:30 - 19:30, Вс - выходной"
+  instagram: "https://instagram.com/woset_english"
 };

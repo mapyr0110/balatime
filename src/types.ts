@@ -15,7 +15,7 @@ export interface Program {
   discountBanner?: string; // e.g., "5 000 ₸ дешевле на ~15%"
   benefits: string[];
   bonuses: string[]; // e.g., "Бесплатный чай и печенье", "Рабочая тетрадь в подарок"
-  colorTheme: "red" | "blue" | "teal" | "orange" | "green";
+  colorTheme: "orange" | "green";
 }
 
 export interface Review {
@@ -27,25 +27,10 @@ export interface Review {
   rating: number;
 }
 
-export interface Teacher {
-  id: string;
-  name: string;
-  role: string;
-  experience: string;
-  education: string;
-  bio: string;
-  imageUrl: string;
-}
-
 export interface GalleryItem {
   id: string;
   title: string;
   category: "все" | "классы" | "процесс" | "праздники";
   imageUrl: string;
   description: string;
-}
-
-export interface FAQ {
-  question: string;
-  answer: string;
 }
