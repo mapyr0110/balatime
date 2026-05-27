@@ -57,12 +57,12 @@ export default function LocationMap() {
           </div>
 
           <div className="lg:col-span-7 bg-white rounded-[32px] p-4 border border-[rgba(0,0,0,0.05)] shadow-md h-[400px] lg:h-auto min-h-[400px] overflow-hidden flex">
-            <iframe
-              src="https://yandex.kz/map-widget/v1/?ll=76.911958%2C43.338014&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgg2NzMzMzgyOBKNAdKa0LDQt9Cg0LvQvNCw0YLRiywg0JDQu9C80LDRgtGLLCDQkNC70LDRgtCw0YMg0LDRg9C00LDQvdGLLCDSmtCw0YDQsNGB0YMg0YjQsNKT0YvQvSDQsNGD0LTQsNC90YssINCm0LXQvdGC0YDQsNC70YzQvdCw0Y8g0LrTqdGI0LXRgdGWLCAxNjXQkCIKDezSmUIVIFotQg%2C%2C&z=16"
+            <img
+              src="src\assets\images\karta.jpg"
               width="100%"
               height="100%"
               style={{ border: 0, borderRadius: "24px" }}
-              allowFullScreen={true}
+              // allowFullScreen={true}
               loading="lazy"
               title="BALATIME SCHOOL Яндекс Карты"
               className="w-full h-full opacity-90 hover:opacity-100 transition-opacity"
