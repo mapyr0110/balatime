@@ -9,11 +9,11 @@ import img1Url from "../assets/images/img1.jpg";
 import img2Url from "../assets/images/img2.jpg";
 import img3Url from "../assets/images/img3.jpg";
 import img4Url from "../assets/images/img4.jpg";
-import karta from "../assets/images/karta.jpg";
+
 
 
 export const CLASSROOM_INTERIOR = classroomInteriorUrl;
-export const KARTA = karta;
+
 
 export const PROGRAMS: Program[] = [
   {

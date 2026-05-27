@@ -1,6 +1,6 @@
 import React from "react";
 import { Phone, MapPin, Instagram } from "lucide-react";
-import { CONTACT_INFO, KARTA } from "../data/websiteData";
+import { CONTACT_INFO } from "../data/websiteData";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { useLang } from "../context/LangContext";
 import logoIcon from "../assets/images/icon.png";
@@ -30,7 +30,6 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[rgba(255,255,255,0.06)]">
 
-          {/* Логотип + описание + соцсети */}
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
             <a href="#hero" onClick={handleScrollToTop} className="flex items-center gap-2 group">
               <img
@@ -52,7 +51,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Навигация */}
           <div className="lg:col-span-3 text-left">
             <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider mb-6">
               {t.footer.navTitle}
@@ -69,7 +67,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Контакты + карта */}
           <div className="lg:col-span-5 text-left flex flex-col gap-5">
             <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider mb-2">
               {t.footer.contactsTitle}
@@ -87,23 +84,7 @@ export default function Footer() {
                 ))}
               </div>
             </div>
-
-            {/* Карта */}
-            <a
-              href="https://maps.google.com/?q=Алматы+мкр+Карасу+ул+Центральная+165А"
-              target="_blank"
-              rel="noreferrer"
-              className="block mt-1 rounded-xl overflow-hidden border border-white/10 hover:border-white/30 transition-all duration-300"
-            >
-              <img
-                src={KARTA}
-                alt="Карта расположения центра"
-                className="w-full object-cover"
-                style={{ maxHeight: "160px" }}
-              />
-            </a>
           </div>
-
         </div>
 
         <div className="mt-12 flex flex-col sm:flex-row justify-between items-center gap-6 font-sans text-xs text-white/50">
