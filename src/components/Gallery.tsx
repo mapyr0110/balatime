@@ -18,8 +18,8 @@ export default function Gallery() {
     <section id="gallery" className="py-24 bg-[var(--color-bg)] border-t border-b border-[rgba(0,0,0,0.04)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16 animate-fade-in">
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] mb-4">
-            <span className="font-display text-[11px] font-bold tracking-wider uppercase">{t.gallery.badge}</span>
+          <div className="section-badge mb-4">
+            <span>{t.gallery.badge}</span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4">
             {t.gallery.title}

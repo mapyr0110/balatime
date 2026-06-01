@@ -23,7 +23,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
     <section id="programs" className="bg-white py-24">
       <div className="section-shell">
         <div className="mx-auto mb-12 max-w-3xl text-center">
-          <div className="mb-4 inline-flex items-center rounded-full bg-[#FFF4E8] px-4 py-2 font-display text-sm font-bold text-[var(--color-primary)]">
+          <div className="section-badge mb-4">
             {t.programs.badge}
           </div>
           <h2 className="font-sans text-3xl font-black leading-tight text-[var(--color-ink)] md:text-5xl">

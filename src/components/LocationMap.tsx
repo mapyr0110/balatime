@@ -10,8 +10,8 @@ export default function LocationMap() {
     <section id="location" className="py-24 bg-[var(--color-bg)] border-t border-b border-[rgba(0,0,0,0.04)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] mb-4">
-            <span className="font-display text-[11px] font-bold tracking-wider uppercase">{t.location.badge}</span>
+          <div className="section-badge mb-4">
+            <span>{t.location.badge}</span>
           </div>
           <h2 className="font-serif text-3xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-4">
             {t.location.title}
@@ -20,37 +20,37 @@ export default function LocationMap() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-          <div className="lg:col-span-5 flex flex-col justify-between text-left gap-8">
-            <div className="bg-white p-8 rounded-[32px] border border-[rgba(0,0,0,0.05)] shadow-sm">
-              <h3 className="font-display text-xl font-bold text-[var(--color-ink)] mb-6 flex items-center gap-2">
-                <MapPin className="w-6 h-6 text-[var(--color-primary)]" />
+          <div className="lg:col-span-5 flex flex-col justify-center text-left gap-8">
+            <div className="p-0">
+              <h3 className="font-display text-3xl font-black text-[var(--color-ink)] mb-8 flex items-center gap-3">
+                <MapPin className="w-8 h-8 text-[var(--color-primary)]" />
                 {t.location.addressTitle}
               </h3>
-              <div className="flex flex-col gap-5">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] shrink-0 mt-0.5">
-                    <Navigation className="w-4 h-4" />
+              <div className="flex flex-col gap-7">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] shrink-0 mt-0.5">
+                    <Navigation className="w-6 h-6" />
                   </div>
                   <div>
-                    <p className="font-sans text-sm font-semibold text-[var(--color-ink)] leading-snug">{t.location.address}</p>
-                    <p className="font-sans text-xs text-[var(--color-ink-light)] mt-1">{t.location.office}</p>
+                    <p className="font-sans text-lg font-black text-[var(--color-ink)] leading-snug">{t.location.address}</p>
+                    <p className="font-sans text-base font-bold text-[var(--color-ink-light)] mt-2">{t.location.office}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-3 border-t border-[rgba(0,0,0,0.05)] pt-5 mt-2">
-                  <div className="w-8 h-8 rounded-lg bg-[var(--color-accent-green)]/10 flex items-center justify-center text-[var(--color-accent-green)] shrink-0 mt-0.5">
-                    <Building2 className="w-4 h-4" />
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-accent-green)]/10 flex items-center justify-center text-[var(--color-accent-green)] shrink-0 mt-0.5">
+                    <Building2 className="w-6 h-6" />
                   </div>
                   <div>
-                    <span className="font-sans text-[10px] uppercase text-[var(--color-ink-light)] block">{t.location.landmark}</span>
-                    <p className="font-sans text-xs text-[var(--color-ink-light)] leading-snug">{t.location.landmarkText}</p>
+                    <span className="font-sans text-xs font-black uppercase tracking-wide text-[var(--color-ink-light)] block">{t.location.landmark}</span>
+                    <p className="font-sans text-base font-semibold text-[var(--color-ink-light)] leading-snug mt-1">{t.location.landmarkText}</p>
                   </div>
                 </div>
 
                 <a href={twoGisUrl} target="_blank" rel="noreferrer"
-                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-2xl bg-[var(--color-primary)] px-5 py-3 font-display text-sm font-bold text-white transition-transform hover:-translate-y-0.5">
+                  className="inline-flex min-h-16 w-full sm:w-fit items-center justify-center gap-3 rounded-[20px] bg-[var(--color-primary)] px-8 py-5 font-display text-lg font-black text-white transition-transform hover:-translate-y-0.5">
                   {t.location.openMap}
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="w-5 h-5" />
                 </a>
               </div>
             </div>

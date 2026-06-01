@@ -18,8 +18,8 @@ export default function About() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-6 text-left">
-            <div className="inline-flex items-center px-3 py-1.5 rounded-full bg-[var(--color-primary)]/10 text-[var(--color-primary)] mb-6">
-              <span className="font-display text-xs font-bold tracking-wider uppercase">{t.about.badge}</span>
+            <div className="section-badge mb-6">
+              <span>{t.about.badge}</span>
             </div>
             <h2 className="font-serif text-4xl md:text-5xl text-[var(--color-ink)] font-bold tracking-tight mb-6 leading-tight">
               {t.about.title}
