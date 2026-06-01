@@ -23,8 +23,8 @@ export default function LocationMap() {
           <div className="lg:col-span-5 flex flex-col justify-center text-left gap-8">
             <div className="p-0">
               <h3 className="font-display text-3xl font-black text-[var(--color-ink)] mb-8 flex items-center gap-3">
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-primary)]">
-                  <MapPin className="w-7 h-7 text-white" />
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center">
+                  <MapPin className="w-9 h-9 text-[var(--color-primary)]" />
                 </span>
                 {t.location.addressTitle}
               </h3>
