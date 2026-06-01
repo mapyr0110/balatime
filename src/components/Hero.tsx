@@ -13,9 +13,9 @@ export default function Hero() {
   };
 
   const trustItems = [
-    { icon: <Star className="h-5 w-5" />, ...t.hero.trust.rating },
-    { icon: <UsersRound className="h-5 w-5" />, ...t.hero.trust.age },
-    { icon: <ShieldCheck className="h-5 w-5" />, ...t.hero.trust.group },
+    { icon: <Star className="h-5 w-5" />, bg: "bg-[var(--color-primary)]", ...t.hero.trust.rating },
+    { icon: <UsersRound className="h-5 w-5" />, bg: "bg-[var(--color-accent-green)]", ...t.hero.trust.age },
+    { icon: <ShieldCheck className="h-5 w-5" />, bg: "bg-[var(--color-accent-green)]", ...t.hero.trust.group },
   ];
 
   return (
@@ -54,7 +54,7 @@ export default function Hero() {
             className="mt-10 grid gap-3 sm:grid-cols-3">
             {trustItems.map((item) => (
               <div key={item.label} className="rounded-[24px] border border-[rgba(40,183,164,0.22)] bg-white p-4 text-left">
-                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-2xl bg-[var(--color-accent-green)]/10 text-[var(--color-accent-green)]">
+                <div className={`mb-3 flex h-10 w-10 items-center justify-center rounded-2xl ${item.bg} text-white`}>
                   {item.icon}
                 </div>
                 <div className="font-display text-lg font-black text-[var(--color-ink)]">{item.value}</div>

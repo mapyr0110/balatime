@@ -3,14 +3,13 @@ import { Phone, MapPin, Instagram } from "lucide-react";
 import { CONTACT_INFO } from "../data/websiteData";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { useLang } from "../context/LangContext";
-import logoIcon from "../assets/images/icon.png";
 import amorIcon from "../assets/images/amor.png";
 
 export default function Footer() {
   const { t } = useLang();
 
   const socialLinks = [
-    { icon: <Instagram className="w-5 h-5 text-white" />, href: CONTACT_INFO.instagram, label: "Instagram" },
+    { icon: <Instagram className="w-5 h-5" />, href: CONTACT_INFO.instagram, label: "Instagram" },
     { icon: <WhatsAppIcon className="w-5 h-5" />, href: CONTACT_INFO.whatsapp, label: "WhatsApp" },
   ];
 
@@ -32,20 +31,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[rgba(255,255,255,0.06)]">
 
           <div className="lg:col-span-4 flex flex-col items-start gap-4">
-            <a href="#hero" onClick={handleScrollToTop} className="flex items-center gap-2 group">
-              <img
-                src={logoIcon}
-                alt="BALATIME SCHOOL"
-                className="h-16 w-16 rounded-2xl object-cover"
-              />
-            </a>
-            <p className="font-sans text-xs sm:text-sm text-white/65 leading-relaxed max-w-sm mt-2">
+            <p className="font-display text-3xl sm:text-4xl font-black text-[var(--color-primary)] leading-none max-w-md">
+              BALATIME
+            </p>
+            <p className="font-sans text-sm sm:text-base text-white/70 leading-relaxed max-w-md">
               {t.footer.description}
             </p>
             <div className="flex gap-3 mt-4">
               {socialLinks.map((social, i) => (
                 <a key={i} href={social.href} target="_blank" rel="noreferrer" aria-label={social.label}
-                  className="w-10 h-10 rounded-xl bg-white/10 hover:bg-[var(--color-primary)] hover:text-white transition-all duration-300 flex items-center justify-center text-[var(--color-accent-green)] shadow-sm cursor-pointer">
+                  className="w-12 h-12 rounded-2xl bg-white/10 transition-all duration-300 flex items-center justify-center text-white cursor-pointer hover:-translate-y-0.5 hover:bg-[var(--color-primary)]">
                   {social.icon}
                 </a>
               ))}
@@ -53,14 +48,14 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-3 text-left">
-            <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider mb-6">
+            <h4 className="font-display text-xs font-bold text-[var(--color-primary)] uppercase tracking-wider mb-6">
               {t.footer.navTitle}
             </h4>
             <ul className="flex flex-col gap-3 font-sans text-xs sm:text-sm">
               {navLinks.map((link) => (
                 <li key={link.href}>
                   <a href={link.href} onClick={link.href === "#hero" ? handleScrollToTop : undefined}
-                    className="hover:text-white hover:underline decoration-[var(--color-primary)] transition-all">
+                    className="hover:text-white transition-all">
                     {link.label}
                   </a>
                 </li>
@@ -69,15 +64,15 @@ export default function Footer() {
           </div>
 
           <div className="lg:col-span-5 text-left flex flex-col gap-5">
-            <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider mb-2">
+            <h4 className="font-display text-xs font-bold text-[var(--color-primary)] uppercase tracking-wider mb-2">
               {t.footer.contactsTitle}
             </h4>
             <div className="flex items-start gap-3">
-              <MapPin className="w-5 h-5 text-[var(--color-primary)] shrink-0 mt-0.5" />
+              <MapPin className="w-5 h-5 text-white shrink-0 mt-0.5" />
               <p className="font-sans text-xs sm:text-sm text-white/85 leading-snug">{t.location.address}</p>
             </div>
             <div className="flex items-start gap-3">
-              <Phone className="w-5 h-5 text-[var(--color-primary)] shrink-0 mt-0.5" />
+              <Phone className="w-5 h-5 text-white shrink-0 mt-0.5" />
               <div className="flex flex-col gap-1 font-sans text-xs sm:text-sm text-white/85">
                 {CONTACT_INFO.phones.map((p, i) => (
                   <a key={i} href={`tel:${p.replace(/\D/g, "")}`}

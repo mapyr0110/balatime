@@ -83,7 +83,9 @@ export default function Header() {
                 <button type="button" onClick={() => setIsLanguageOpen((v) => !v)}
                   className="inline-flex min-h-12 items-center gap-2 rounded-full border border-[rgba(40,183,164,0.22)] bg-[var(--color-accent-green)]/10 px-4 py-3 font-display text-sm font-extrabold text-[var(--color-ink)] transition-colors hover:bg-[var(--color-accent-green)]/15"
                   aria-haspopup="menu" aria-expanded={isLanguageOpen}>
-                  <Globe2 className="h-5 w-5 text-[var(--color-accent-green)]" />
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[var(--color-accent-green)] text-white">
+                    <Globe2 className="h-5 w-5" />
+                  </span>
                   {lang}
                   <ChevronDown className={`h-4 w-4 transition-transform ${isLanguageOpen ? "rotate-180" : ""}`} />
                 </button>
@@ -112,7 +114,7 @@ export default function Header() {
             </div>
 
             <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent-green)]/10 text-[var(--color-ink)] md:hidden"
+              className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-[var(--color-accent-green)] text-white md:hidden"
               aria-label="Toggle menu">
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>

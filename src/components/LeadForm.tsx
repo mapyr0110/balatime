@@ -23,9 +23,10 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
     { id: "english", label: t.form.programOptions.english },
     { id: "individual", label: t.form.programOptions.individual },
   ];
-  const [formData, setFormData] = useState({ parentName: "", childAge: "", phone: "+7 ", programName: "" });
+  const [formData, setFormData] = useState({ parentName: "", childAge: "", phone: "", programName: "" });
   const [savedSubmissions, setSavedSubmissions] = useState<SavedApplication[]>([]);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [phoneError, setPhoneError] = useState("");
 
   useEffect(() => {
     if (selectedProgram) {
@@ -43,19 +44,30 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
+    if (name === "phone") {
+      setPhoneError("");
+    }
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.parentName || !formData.phone || formData.phone.length < 8) {
+    const compactPhone = formData.phone.replace(/\s/g, "");
+    const phone = compactPhone.replace(/^\+/, "");
+
+    if (!/^\+?[78]\d{10}$/.test(compactPhone)) {
+      setPhoneError("напишите корректный номер телефона");
+      return;
+    }
+
+    if (!formData.parentName) {
       alert(t.form.alertMsg);
       return;
     }
     const newLead: SavedApplication = {
       id: Math.random().toString(36).substring(2, 9),
       name: formData.parentName, age: formData.childAge || t.form.notSpecified,
-      phone: formData.phone, program: formData.programName || t.form.consultation,
+      phone, program: formData.programName || t.form.consultation,
       status: t.form.leadStatus,
       timestamp: new Date().toLocaleDateString("ru-RU", { hour: "2-digit", minute: "2-digit" }),
     };
@@ -66,12 +78,12 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
     const waText = `${t.form.waGreeting}\n\n` +
       `• ${t.form.waName}: ${formData.parentName}\n` +
       `• ${t.form.waAge}: ${formData.childAge || "—"}\n` +
-      `• ${t.form.waPhone}: ${formData.phone}\n` +
+      `• ${t.form.waPhone}: ${phone}\n` +
       `• ${t.form.waCourse}: ${formData.programName || t.form.consultation}`;
     window.open(`https://wa.me/77471581493?text=${encodeURIComponent(waText)}`, "_blank");
     setIsSuccess(true);
     setTimeout(() => {
-      setFormData({ parentName: "", childAge: "", phone: "+7 ", programName: "" });
+      setFormData({ parentName: "", childAge: "", phone: "", programName: "" });
       setIsSuccess(false);
     }, 5000);
   };
@@ -88,7 +100,7 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
               {t.form.subtitle}
             </p>
 
-            <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+            <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-5">
               <div className="flex flex-col gap-1.5">
                 <label htmlFor="parentName" className="font-display text-xs font-bold text-[var(--color-ink-light)] uppercase tracking-wide">
                   {t.form.nameLabel}
@@ -111,9 +123,13 @@ export default function LeadForm({ selectedProgram }: LeadFormProps) {
                   <label htmlFor="phone" className="font-display text-xs font-bold text-[var(--color-ink-light)] uppercase tracking-wide">
                     {t.form.phoneLabel}
                   </label>
-                  <input type="tel" id="phone" name="phone" required
+                  <input type="tel" id="phone" name="phone" required inputMode="tel" pattern="[+0-9\s]*" maxLength={18}
                     placeholder={t.form.phonePlaceholder} value={formData.phone} onChange={handleChange}
-                    className="w-full px-4 py-3.5 rounded-2xl border border-[rgba(0,0,0,0.08)] bg-[var(--color-bg)] text-xs sm:text-sm text-[var(--color-ink)] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[var(--color-primary)] focus:border-transparent transition-all" />
+                    aria-invalid={Boolean(phoneError)}
+                    className={`w-full px-4 py-3.5 rounded-2xl border bg-[var(--color-bg)] text-xs sm:text-sm text-[var(--color-ink)] focus:bg-white focus:outline-none focus:ring-2 focus:border-transparent transition-all ${phoneError ? "border-red-400 focus:ring-red-300" : "border-[rgba(0,0,0,0.08)] focus:ring-[var(--color-primary)]"}`} />
+                  {phoneError && (
+                    <p className="font-sans text-xs font-bold text-red-500">{phoneError}</p>
+                  )}
                 </div>
               </div>
 

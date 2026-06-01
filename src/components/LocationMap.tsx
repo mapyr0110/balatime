@@ -23,12 +23,14 @@ export default function LocationMap() {
           <div className="lg:col-span-5 flex flex-col justify-center text-left gap-8">
             <div className="p-0">
               <h3 className="font-display text-3xl font-black text-[var(--color-ink)] mb-8 flex items-center gap-3">
-                <MapPin className="w-8 h-8 text-[var(--color-primary)]" />
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-[var(--color-primary)]">
+                  <MapPin className="w-7 h-7 text-white" />
+                </span>
                 {t.location.addressTitle}
               </h3>
               <div className="flex flex-col gap-7">
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)]/10 flex items-center justify-center text-[var(--color-primary)] shrink-0 mt-0.5">
+                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-primary)] flex items-center justify-center text-white shrink-0 mt-0.5">
                     <Navigation className="w-6 h-6" />
                   </div>
                   <div>
@@ -38,7 +40,7 @@ export default function LocationMap() {
                 </div>
 
                 <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-accent-green)]/10 flex items-center justify-center text-[var(--color-accent-green)] shrink-0 mt-0.5">
+                  <div className="w-12 h-12 rounded-2xl bg-[var(--color-accent-green)] flex items-center justify-center text-white shrink-0 mt-0.5">
                     <Building2 className="w-6 h-6" />
                   </div>
                   <div>
