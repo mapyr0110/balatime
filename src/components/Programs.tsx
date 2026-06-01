@@ -31,8 +31,19 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
           </h2>
         </div>
 
-        <div className="-mx-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <div className="flex snap-x snap-mandatory items-stretch gap-6">
+        <div className="relative">
+          <motion.div
+            aria-hidden="true"
+            initial={{ opacity: 0, x: 0 }}
+            animate={{ opacity: [0, 1, 1, 0], x: [0, 12, 0, 18] }}
+            transition={{ duration: 3, delay: 0.8, ease: "easeInOut" }}
+            className="pointer-events-none absolute right-5 top-1/2 z-20 flex h-12 w-12 -translate-y-1/2 items-center justify-center rounded-full bg-[var(--color-primary)] text-white shadow-[0_12px_30px_rgba(244,147,66,0.3)]"
+          >
+            <ArrowRight className="h-6 w-6" />
+          </motion.div>
+
+          <div className="-mx-4 overflow-x-auto px-4 pb-4 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            <div className="flex snap-x snap-mandatory items-stretch gap-6">
             {sortedPrograms.map((prog: Program, index) => {
               const programText = t.programs.items[prog.id as keyof typeof t.programs.items];
               const isGreen = index % 2 === 0;
@@ -53,7 +64,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                   <div className="flex flex-1 flex-col px-2 pt-5">
                     <div className="min-h-[104px] border-b border-[rgba(40,183,164,0.18)] pb-5">
                       {oldPrice && (
-                        <div className="mb-2 inline-flex rounded-full bg-[#FFF4E8] px-3 py-1 text-xs font-black text-[var(--color-primary)]">
+                        <div className="mb-2 inline-flex rounded-full bg-[var(--color-primary)] px-3 py-1 text-xs font-black text-white">
                           {t.programs.sale}
                         </div>
                       )}
@@ -97,6 +108,7 @@ export default function Programs({ onSelectProgram }: ProgramsProps) {
                 </motion.article>
               );
             })}
+            </div>
           </div>
         </div>
       </div>
