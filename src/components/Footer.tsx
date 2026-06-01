@@ -4,12 +4,13 @@ import { CONTACT_INFO } from "../data/websiteData";
 import WhatsAppIcon from "./WhatsAppIcon";
 import { useLang } from "../context/LangContext";
 import logoIcon from "../assets/images/icon.png";
+import amorIcon from "../assets/images/amor.png";
 
 export default function Footer() {
   const { t } = useLang();
 
   const socialLinks = [
-    { icon: <Instagram className="w-5 h-5" />, href: CONTACT_INFO.instagram, label: "Instagram" },
+    { icon: <Instagram className="w-5 h-5 text-white" />, href: CONTACT_INFO.instagram, label: "Instagram" },
     { icon: <WhatsAppIcon className="w-5 h-5" />, href: CONTACT_INFO.whatsapp, label: "WhatsApp" },
   ];
 
@@ -26,7 +27,7 @@ export default function Footer() {
   };
 
   return (
-    <footer id="contacts" className="bg-[#173A31] text-white/65 pt-20 pb-12 border-t border-[rgba(255,255,255,0.06)] text-left">
+    <footer id="contacts" className="relative bg-[#173A31] text-white/65 pt-20 pb-12 border-t border-[rgba(255,255,255,0.06)] text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-[rgba(255,255,255,0.06)]">
 
@@ -87,9 +88,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col sm:flex-row justify-between items-center gap-6 font-sans text-xs text-white/50">
-          <p>© {new Date().getFullYear()} BALATIME SCHOOL. {t.footer.rights}</p>
-          <div className="flex gap-6">
+        <div className="mt-12 grid grid-cols-1 items-center gap-4 font-sans text-xs text-white/50 md:grid-cols-[1fr_auto_1fr]">
+          <p className="text-center md:text-left">&copy; {new Date().getFullYear()} BALATIME SCHOOL. {t.footer.rights}</p>
+          <a
+            href="https://amorix.kz"
+            className="footer-powered justify-self-center"
+            target="_blank"
+            rel="noopener"
+          >
+            <span>Powered by</span>
+            <img src={amorIcon} alt="Amorix" />
+          </a>
+          <div className="flex flex-col items-center gap-2 text-center md:items-end md:text-right lg:flex-row lg:justify-end lg:gap-6">
             <span>* BALATIME SCHOOL</span>
             <span>{t.footer.city}</span>
           </div>
